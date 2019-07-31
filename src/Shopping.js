@@ -1,8 +1,5 @@
 import React from 'react';
 import Tasarim from './tasarim.module.scss';
-import urun1 from './images/urun1.png';
-import urun2 from './images/urun2.png';
-import urun3 from './images/urun3.png';
 import axios from 'axios';
 
 class Shopping extends React.Component {
@@ -21,7 +18,7 @@ class Shopping extends React.Component {
         return (
             <div className={Tasarim.urunlistesi}>
             {this.state.urunler.map((gelen, id) =>
-                    <div key={id} className={Tasarim.urun}>
+                    (<div key={id} className={Tasarim.urun}>
                         <table className={Tasarim.urundizayn}>
                             <tr>
                                 <td>
@@ -43,7 +40,7 @@ class Shopping extends React.Component {
                             </tr>
 
                         </table>
-                    </div>)}
+                    </div>))}
             </div>
         );
 
