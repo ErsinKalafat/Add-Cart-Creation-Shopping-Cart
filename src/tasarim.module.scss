@@ -6,17 +6,17 @@ $kirmiziTonu: #7a3130;
 
 
 .ersinkalafat {
-  float: right;
   font-size: 12px;
   color: darkcyan;
   margin: 20px;
 }
 
+
 .urunlistesi {
   margin: 20px;
   text-align: center;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 25% 25% 25% 25%;
   grid-gap: 10px;
   background-color: #fff;
   color: #444;
@@ -24,10 +24,10 @@ $kirmiziTonu: #7a3130;
 
 .urun {
   color: #000000;
-  border-radius: 0px;
+  border-radius: 0;
   border-style: ridge;
   border-width: 1px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .urundizayn {
@@ -59,20 +59,25 @@ $kirmiziTonu: #7a3130;
   margin-left: 10px;
 }
 
-.mycartbuton {
+.ustmenu {
   background-color: $kirmiziTonu;
   border-radius: 3px;
   cursor: pointer;
   color: white;
   font-size: $butonYazi;
   font-weight: bold;
-  height: 40px;
-  padding: 1px 50px 1px 50px;
+  padding: 10px 20px 10px 20px;
   border: none;
   margin: 20px;
+  text-decoration: none;
 }
 
+@media only screen and (max-width: 800px) {
+  .urunlistesi {
+    grid-template-columns: 33% 33% 33%;
+  }
 
+}
 
 @media only screen and (max-width: 600px) {
   .urunlistesi {
@@ -84,3 +89,4 @@ $kirmiziTonu: #7a3130;
     padding: 1px 15px 1px 15px;
   }
 }
+

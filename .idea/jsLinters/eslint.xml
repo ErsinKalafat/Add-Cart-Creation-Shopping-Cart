@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EslintConfiguration">
+    <custom-configuration-file used="true" path="C:\Users\Ersin Kalafat\reactprojeleri\hurriyetemlakcasestudy\.eslintrc" />
+    <additional-rules-dir value="C:\Users\Ersin Kalafat\reactprojeleri\hurriyetemlakcasestudy" />
+    <extra-options value="{ &quot;extends&quot;: &quot;rallycoding&quot; }" />
+  </component>
+</project>
