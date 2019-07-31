@@ -1,13 +1,12 @@
 import React from 'react';
-import Tasarim from "./tasarim.module.scss";
-import urun1 from "./images/urun1.png";
-import urun2 from "./images/urun2.png";
-import urun3 from "./images/urun3.png";
+import Tasarim from './tasarim.module.scss';
+import urun1 from './images/urun1.png';
+import urun2 from './images/urun2.png';
+import urun3 from './images/urun3.png';
 
 class Shopping extends React.Component {
 
     render() {
-
         return (
             <div>
                 <div className={Tasarim.urunlistesi}>
@@ -28,7 +27,7 @@ class Shopping extends React.Component {
                                     730 TL
                                 </td>
                                 <td>
-                                    <input className={Tasarim.buton} type="submit" value="ADD BASKET"/>
+                                    <input className={Tasarim.buton} type="submit" value="ADD BASKET" />
                                 </td>
                             </tr>
 
@@ -39,7 +38,7 @@ class Shopping extends React.Component {
                         <table className={Tasarim.urundizayn}>
                             <tr>
                                 <td>
-                                    <img src={urun2}/>
+                                    <img src={urun2} />
                                 </td>
                             </tr>
                             <tr>
@@ -52,7 +51,7 @@ class Shopping extends React.Component {
                                     730 TL
                                 </td>
                                 <td>
-                                    <input className={Tasarim.buton} type="submit" value="ADD BASKET"/>
+                                    <input className={Tasarim.buton} type="submit" value="ADD BASKET" />
                                 </td>
                             </tr>
 
