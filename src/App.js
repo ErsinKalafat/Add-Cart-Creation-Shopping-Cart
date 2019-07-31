@@ -1,13 +1,11 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Tasarim from './tasarim.module.scss';
-import Cart from "./Cart.js";
-import Shopping from "./Shopping.js";
+import Cart from './Cart.js';
+import Shopping from './Shopping.js';
 
 
 class App extends React.Component {
-
-
     render() {
         return (
             <div>
@@ -17,10 +15,10 @@ class App extends React.Component {
                         <Link className={Tasarim.ustmenu} to="/shopping">Alışveriş</Link>
                         <Link className={Tasarim.ustmenu} to="/cart">My Cart</Link>
                     </div>
-                    <br/><hr/>
+                    <br /><hr />
                     <div>
-                        <Route path="/shopping" component={Shopping}/>
-                        <Route path="/cart" component={Cart}/>
+                        <Route path="/shopping" component={Shopping} />
+                        <Route path="/cart" component={Cart} />
                     </div>
                 </Router>
             </div>
@@ -28,7 +26,5 @@ class App extends React.Component {
     }
 }
 
-export default App
-
-
+export default App;
 

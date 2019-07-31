@@ -3,76 +3,39 @@ import Tasarim from './tasarim.module.scss';
 import urun1 from './images/urun1.png';
 import urun2 from './images/urun2.png';
 import urun3 from './images/urun3.png';
+import axios from 'axios';
 
 class Shopping extends React.Component {
+    state = {
+        urunler: [],
+    };
+
+    componentWillMount() {
+        axios.get('https://nonchalant-fang.glitch.me/listing',).then(obj => {
+            console.log(obj);
+            this.setState({urunler: obj.data});
+        });
+    }
 
     render() {
         return (
-            <div>
-                <div className={Tasarim.urunlistesi}>
-                    <div className={Tasarim.urun}>
+            <div className={Tasarim.urunlistesi}>
+            {this.state.urunler.map((gelen, id) =>
+                    <div key={id} className={Tasarim.urun}>
                         <table className={Tasarim.urundizayn}>
                             <tr>
                                 <td>
-                                    <img src={urun1}/>
+                                    <img width={100} src={gelen.image} />
                                 </td>
                             </tr>
                             <tr>
                                 <td className={Tasarim.urunaciklamasi}>
-                                    Chevron Tempered Glass Guard for Lenovo K6 Power
+                                    {gelen.name}
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    730 TL
-                                </td>
-                                <td>
-                                    <input className={Tasarim.buton} type="submit" value="ADD BASKET" />
-                                </td>
-                            </tr>
-
-                        </table>
-                    </div>
-
-                    <div className={Tasarim.urun}>
-                        <table className={Tasarim.urundizayn}>
-                            <tr>
-                                <td>
-                                    <img src={urun2} />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className={Tasarim.urunaciklamasi}>
-                                    Kajal Sarees Printed Bhagalpuri Art Silk Sari
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    730 TL
-                                </td>
-                                <td>
-                                    <input className={Tasarim.buton} type="submit" value="ADD BASKET" />
-                                </td>
-                            </tr>
-
-                        </table>
-                    </div>
-
-                    <div className={Tasarim.urun}>
-                        <table className={Tasarim.urundizayn}>
-                            <tr>
-                                <td>
-                                    <img src={urun3}/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className={Tasarim.urunaciklamasi}>
-                                    Indian Polity 5 Edition
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    730 TL
+                                    {gelen.price} {gelen.currency}
                                 </td>
                                 <td>
                                     <input className={Tasarim.buton} type="submit" value="ADD BASKET"/>
@@ -80,82 +43,10 @@ class Shopping extends React.Component {
                             </tr>
 
                         </table>
-                    </div>
-                    <div className={Tasarim.urun}>
-                        <table className={Tasarim.urundizayn}>
-                            <tr>
-                                <td>
-                                    <img src={urun2}/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className={Tasarim.urunaciklamasi}>
-                                    Kajal Sarees Printed Bhagalpuri Art Silk Sari
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    730 TL
-                                </td>
-                                <td>
-                                    <input className={Tasarim.buton} type="submit" value="ADD BASKET"/>
-                                </td>
-                            </tr>
-
-                        </table>
-                    </div>
-                    <div className={Tasarim.urun}>
-                        <table className={Tasarim.urundizayn}>
-                            <tr>
-                                <td>
-                                    <img src={urun1}/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className={Tasarim.urunaciklamasi}>
-                                    Chevron Tempered Glass Guard for Lenovo K6 Power
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    730 TL
-                                </td>
-                                <td>
-                                    <input className={Tasarim.buton} type="submit" value="ADD BASKET"/>
-                                </td>
-                            </tr>
-
-                        </table>
-                    </div>
-                    <div className={Tasarim.urun}>
-                        <table className={Tasarim.urundizayn}>
-                            <tr>
-                                <td>
-                                    <img src={urun3}/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className={Tasarim.urunaciklamasi}>
-                                    Indian Polity 5 Edition
-                                </td>
-                            </tr>
-                            <tr className={Tasarim.altdizayn}>
-                                <td>
-                                    730 TL
-                                </td>
-                                <td>
-                                    <input className={Tasarim.buton} type="submit" value="ADD BASKET"/>
-                                </td>
-                            </tr>
-
-                        </table>
-                    </div>
-                </div>
-
-
+                    </div>)}
             </div>
-
         );
+
     }
 
 }
