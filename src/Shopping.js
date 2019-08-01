@@ -3,9 +3,13 @@ import Tasarim from './tasarim.module.scss';
 import axios from 'axios';
 
 class Shopping extends React.Component {
-    state = {
-        urunler: [],
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            urunler: [],
+            cart: []
+        };
+    }
 
     componentWillMount() {
         axios.get('https://nonchalant-fang.glitch.me/listing',).then(obj => {
@@ -14,15 +18,27 @@ class Shopping extends React.Component {
         });
     }
 
+    addToBasket = (deger) => {
+        this.state.cart.push({
+            id: deger
+        });
+
+        this.setState({
+            cart: this.state.cart,
+        });
+
+        console.log(this.state.cart);
+    };
+
     render() {
         return (
             <div className={Tasarim.urunlistesi}>
-            {this.state.urunler.map((gelen, id) =>
-                    (<div key={id} className={Tasarim.urun}>
+                {this.state.urunler.map((gelen, key) =>
+                    (<div key={key} className={Tasarim.urun}>
                         <table className={Tasarim.urundizayn}>
                             <tr>
                                 <td>
-                                    <img width={100} src={gelen.image} />
+                                    <img width={100} src={gelen.image}/>
                                 </td>
                             </tr>
                             <tr>
@@ -35,7 +51,9 @@ class Shopping extends React.Component {
                                     {gelen.price} {gelen.currency}
                                 </td>
                                 <td>
-                                    <input className={Tasarim.buton} type="submit" value="ADD BASKET"/>
+                                    <button className={Tasarim.buton} type="submit"
+                                            onClick={() => this.addToBasket(gelen.id)}> ADD BASKET </button>
+
                                 </td>
                             </tr>
 
