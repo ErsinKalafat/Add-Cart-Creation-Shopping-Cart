@@ -59,6 +59,7 @@ $kirmiziTonu: #7a3130;
   margin-left: 10px;
 }
 
+
 .ustmenu {
   background-color: $kirmiziTonu;
   border-radius: 3px;
@@ -70,6 +71,19 @@ $kirmiziTonu: #7a3130;
   border: none;
   margin: 20px;
   text-decoration: none;
+}
+
+.buton {
+  background-color: #FB641B;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+  font-size: $butonYazi;
+  font-weight: bold;
+  height: 40px;
+  padding: 1px 25px 1px 25px;
+  border: none;
+  margin-left: 10px;
 }
 
 @media only screen and (max-width: 800px) {
