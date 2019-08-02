@@ -4,6 +4,8 @@
  cd my-app
  npm start
  ```
+API : https://nonchalantfang.glitch.me/listing
+ 
 => must setup to run ; React.js, Node.js, Axios, SASS, ESLint, SweetAlert2 
 
 index page will display at http://localhost:3000 
