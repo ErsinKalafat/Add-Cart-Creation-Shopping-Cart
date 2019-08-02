@@ -2,6 +2,7 @@ import React from 'react';
 import Tasarim from './tasarim.module.scss';
 import Axios from 'axios';
 import Cart from './Cart';
+import Swal from 'sweetalert2'
 
 class Shopping extends React.Component {
     constructor(props) {
@@ -33,7 +34,11 @@ class Shopping extends React.Component {
                 cart: this.state.cart,
             });
         }else {
-            alert('Malesef ürün stoklarda mevcut değil :(');
+            Swal.fire({
+                type: 'error',
+                title: 'BULUNAMADI',
+                text: 'Malesef ürün stoklarda mevcut değil :('
+            });
         }
 
     };
