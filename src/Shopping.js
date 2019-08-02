@@ -19,28 +19,38 @@ class Shopping extends React.Component {
         });
     }
 
-    addToBasket = (id,isim,resim,fiyat,kur) => {
-        this.state.cart.push({
-            id: id,
-            name: isim,
-            image: resim,
-            price: fiyat,
-            currency: kur
-        });
+    addToCart = (id, isim, resim, fiyat, kur) => {
+        if (id !== 3) {
+            this.state.cart.push({
+                id: id,
+                name: isim,
+                image: resim,
+                price: fiyat,
+                currency: kur
+            });
 
-        this.setState({
-            cart: this.state.cart,
-        });
+            this.setState({
+                cart: this.state.cart,
+            });
+        }else {
+            alert('Malesef ürün stoklarda mevcut değil :(');
+        }
 
-        console.log(this.state.cart);
     };
+
+    removeFromCart = (sil) => {
+        const yeniSepet = this.state.cart.filter(urun => urun.id !== sil);
+        this.setState({cart: yeniSepet});
+    };
+
 
     render() {
         return (
             <div>
                 <div>
-                    <Cart myCart={this.state.cart} />
+                    <Cart myCart={this.state.cart} removeFromCart={this.removeFromCart}/>
                 </div>
+
                 <div className={Tasarim.urunlistesi}>
                     {this.state.urunler.map((gelen, key) =>
                         (<div key={key} className={Tasarim.urun}>
@@ -61,7 +71,9 @@ class Shopping extends React.Component {
                                     </td>
                                     <td>
                                         <button className={Tasarim.buton} type="submit"
-                                                onClick={() => this.addToBasket(gelen.id,gelen.name,gelen.image,gelen.price,gelen.currency)}> ADD BASKET </button>
+                                                onClick={() => this.addToCart(gelen.id, gelen.name, gelen.image, gelen.price, gelen.currency)}>
+                                            ADD BASKET
+                                        </button>
                                     </td>
                                 </tr>
 

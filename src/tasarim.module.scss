@@ -73,17 +73,18 @@ $kirmiziTonu: #7a3130;
   text-decoration: none;
 }
 
-.buton {
-  background-color: #FB641B;
-  border-radius: 3px;
+.removebuton {
+  background:none;
   cursor: pointer;
-  color: white;
+  color: #6e6e6e;
   font-size: $butonYazi;
   font-weight: bold;
-  height: 40px;
-  padding: 1px 25px 1px 25px;
   border: none;
-  margin-left: 10px;
+  margin-left:40px;
+}
+
+.mycartbaslik {
+  margin:20px;
 }
 
 @media only screen and (max-width: 800px) {
