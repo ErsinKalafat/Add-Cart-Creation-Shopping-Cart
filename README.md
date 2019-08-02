@@ -31,3 +31,8 @@ index page will display at http://localhost:3000
 - REST API usage
 - ESLint usage
 - SCSS usage
+
+
+![Ekran Görüntüsü 1](https://raw.githubusercontent.com/ErsinKalafat/Frontend-Development-with-React-and-SCSS/master/ekran-goruntusu-1.png)
+![Ekran Görüntüsü 1](https://raw.githubusercontent.com/ErsinKalafat/Frontend-Development-with-React-and-SCSS/master/ekran-goruntusu-2.png)
+![Ekran Görüntüsü 1](https://raw.githubusercontent.com/ErsinKalafat/Frontend-Development-with-React-and-SCSS/master/ekran-goruntusu-3.png)
