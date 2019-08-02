@@ -4,7 +4,7 @@
  cd my-app
  npm start
  ```
-React.js, Node.js, SASS, ESLint, must setup to run
+=> must setup to run ; React.js, Node.js, Axios, SASS, ESLint, SweetAlert2 
 
 index page will display at http://localhost:3000 
 
