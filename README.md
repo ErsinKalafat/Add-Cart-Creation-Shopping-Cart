@@ -10,7 +10,8 @@ API : https://nonchalantfang.glitch.me/listing
 
 index page will display at http://localhost:3000 
 
-  Functional
+
+**Functional**
 - Items are fetching from REST API
 - Responsive design
 - Items can be added to the cart
@@ -19,7 +20,7 @@ index page will display at http://localhost:3000
   
   
   
-Technical
+**Technical**
 - Mobile compatibility 
 - Modern user friendly UX
 - Styling should use variables
